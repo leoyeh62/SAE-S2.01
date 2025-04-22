@@ -53,12 +53,19 @@ public abstract class Client {
         this.telephone = telephone;
     }
 
-    public void setMail(String mail) {
+	public void setMail(String mail) {
         this.mail = mail;
     }
 
     public void setPointsFidelite(int pointsFidelite) {
         this.pointsFidelite = pointsFidelite;
     }
+    
+    @Override
+  	public String toString() {
+  		return "Client [code=" + code + ", dateInscription=" + dateInscription + ", adresse=" + adresse + ", telephone="
+  				+ telephone + ", mail=" + mail + ", pointsFidelite=" + pointsFidelite + "]";
+  	}
+
 }
 

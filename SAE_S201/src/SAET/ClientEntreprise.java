@@ -35,4 +35,12 @@ public class ClientEntreprise extends Client {
     	this.SIRET=SIRET;
     }
 
+	@Override
+	public String toString() {
+		return "ClientEntreprise [nom=" + nom + ", SIRET=" + SIRET + ", getCode()=" + getCode()
+				+ ", getDateInscription()=" + getDateInscription() + ", getAdresse()=" + getAdresse()
+				+ ", getTelephone()=" + getTelephone() + ", getMail()=" + getMail() + ", getPointsFidelite()="
+				+ getPointsFidelite() + "]";
+	}
+
 }

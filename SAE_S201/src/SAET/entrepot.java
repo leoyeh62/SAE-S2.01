@@ -29,5 +29,9 @@ public class entrepot extends ODeFrance {
 	public String getNom(){
 		return nom;
 	}
+	@Override
+	public String toString() {
+		return "entrepot [nom=" + nom + ", adresse=" + adresse + ", code=" + code + "]";
+	}
 
 }

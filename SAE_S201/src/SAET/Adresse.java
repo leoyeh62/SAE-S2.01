@@ -1,6 +1,6 @@
 package SAET;
 
-public class Adresse {
+public class Adresse extends ODeFrance {
     private int numero;
     private String voie;
     private Commune commune;
@@ -11,7 +11,7 @@ public class Adresse {
         this.commune = commune;
     }
 
-    public int getNumero() {
+	public int getNumero() {
         return numero;
     }
 
@@ -35,10 +35,6 @@ public class Adresse {
     public void setCommune(Commune commune) {
         this.commune = commune;
     }
-    @Override
-public String toString() {
-    return "Numéro :" + numero + " voie : " + voie + ", commune : " + commune;
-}
 
     public static class Commune {
         private String INSEE;
@@ -63,10 +59,14 @@ public String toString() {
         public String getDepartement() {
             return departement;
         }
-        @Override
-public String toString() {
-    return "Commune :"+ Commune + " (" + departement + ", INSEE: " + INSEE + ")";
-}
     }
+
+    public static void main(String[] args) {
+    }
+    
+    @Override
+	public String toString() {
+		return "Adresse [numero=" + numero + ", voie=" + voie + ", commune=" + commune + "]";
+	}
 }
 

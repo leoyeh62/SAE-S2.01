@@ -36,4 +36,12 @@ public class ClientEtablissementPublic extends Client{
         this.type = type;
     }
 
+	@Override
+	public String toString() {
+		return "ClientEtablissementPublic [nom=" + nom + ", type=" + type + ", getCode()=" + getCode()
+				+ ", getDateInscription()=" + getDateInscription() + ", getAdresse()=" + getAdresse()
+				+ ", getTelephone()=" + getTelephone() + ", getMail()=" + getMail() + ", getPointsFidelite()="
+				+ getPointsFidelite() + "]";
+	}
+
 }

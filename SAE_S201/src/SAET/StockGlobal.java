@@ -4,7 +4,7 @@ import java.util.ArrayList;
 public class StockGlobal extends StockEau {
 	private List<StockEau> stock;
 	
-	public StockGlobal(Eau eau, Entrepot entrepot, int quantite) {
+	public StockGlobal(Eau eau, entrepot entrepot, int quantite) {
 		super(eau,entrepot,quantite);
 		this.stock = new ArrayList<>();
 	}
@@ -38,6 +38,11 @@ public class StockGlobal extends StockEau {
 				}
 			}
 		}
+	}
+
+	@Override
+	public String toString() {
+		return "StockGlobal [stock=" + stock + "]";
 	}
 
 }

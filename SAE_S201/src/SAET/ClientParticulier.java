@@ -34,4 +34,14 @@ public class ClientParticulier extends Client {
     public void setPrenom(String prenom) {
         this.prenom = prenom;
     }
+
+	@Override
+	public String toString() {
+		return "ClientParticulier [nom=" + nom + ", prenom=" + prenom + ", getCode()=" + getCode()
+				+ ", getDateInscription()=" + getDateInscription() + ", getAdresse()=" + getAdresse()
+				+ ", getTelephone()=" + getTelephone() + ", getMail()=" + getMail() + ", getPointsFidelite()="
+				+ getPointsFidelite() + "]";
+	}
+    
+    
 }

@@ -23,10 +23,27 @@ public class Eau extends ODeFrance{
 		return prix;
 	}
 	
+	public void setPrix(int prix) {
+		this.prix=prix;
+	}
+	
+	public void setId(int id) {
+		this.id=id;
+	}
+	
+	public void setMarque(String marque) {
+		this.marque=marque;
+	}
+	
 
+	@Override
+	public String toString() {
+		return "Eau [id=" + id + ", marque=" + marque + ", prix=" + prix + ", catégorie=" + catégorie + "]";
+	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
 	}
+	
 
 }
