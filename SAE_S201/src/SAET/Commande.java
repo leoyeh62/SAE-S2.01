@@ -4,11 +4,11 @@ import java.util.List;
 
 //classe qui représente les commandes passées par un client
 public class Commande implements RemisesPossibles {
-	private int compteur=0;
+	private static int compteur=0;
 	private final int id;
-	private final Client client;
-	private final String date;
-	private final List<LigneDeCommande> lignesDeCommande;
+	private Client client;
+	private String date;
+	private List<LigneDeCommande> lignesDeCommande;
 	
 	//constructeur
 	public Commande(Client client, String date) {
@@ -88,7 +88,7 @@ public class Commande implements RemisesPossibles {
 	public double montantTotal() {
 		double total =0.0;
 		for(int i=0; i<lignesDeCommande.size();i++) {
-			total+=lignesDeCommande.get(i).getEau().getPrix() * lignesDeCommande.get(i).getQuantite();
+			total+=lignesDeCommande.get(i).getEau().prix() * lignesDeCommande.get(i).getQuantite();
 		}
 		double remise = montantDeLaRemise();
 		total=total*(1-remise);
