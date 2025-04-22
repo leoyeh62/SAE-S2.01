@@ -8,6 +8,13 @@ public class StockGlobal extends StockEau {
 		super(eau,entrepot,quantite);
 		this.stock = new ArrayList<>();
 	}
+	 public List<StockEau> getStock() {
+        return stock;
+    }
+
+    public void setStock(List<StockEau> stock) {
+        this.stock = stock;
+    }
 	
 	public void ajouterStock(StockEau nouveauStock) {
 		for(int i=0;i<stock.size();i++) {
