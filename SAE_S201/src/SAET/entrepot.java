@@ -1,31 +1,32 @@
 package SAET;
 
-public class entrepot extends O_de_france {
+public class entrepot extends ODeFrance {
 	private String nom;
 	private String adresse;
 	private int code; 
 	
 	public entrepot (String adresse, String nom, int code) {
+		super();
 		this.adresse = adresse;
 		this.nom = nom;
 		this.code = code;
 	}
-	public setAdresse(String addresse){
-		this.addresse=addresse;
+	public  void setAdresse(String addresse){
+		this.adresse=addresse;
 	}
-	public setNom(String nom){
+	public void setNom(String nom){
 		this.nom=nom;
 	}
-	public setCode(int code){
+	public void setCode(int code){
 		this.code=code;
 	}
-	public getCode(){
+	public int getCode(){
 		return code;
 	}
-	public getAdresse(){
+	public String getAdresse(){
 		return adresse;
 	}
-	public getNom(){
+	public String getNom(){
 		return nom;
 	}
 
