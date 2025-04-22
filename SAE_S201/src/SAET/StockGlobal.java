@@ -3,19 +3,19 @@ import java.util.List;
 import java.util.ArrayList;
 public class StockGlobal extends StockEau {
 	private List<StockEau> stock;
-	
+	//constructeur
 	public StockGlobal(Eau eau, entrepot entrepot, int quantite) {
 		super(eau,entrepot,quantite);
 		this.stock = new ArrayList<>();
-	}
+	}//getter
 	 public List<StockEau> getStock() {
         return stock;
     }
-
+    //setter
     public void setStock(List<StockEau> stock) {
         this.stock = stock;
     }
-	
+	//ajouter du stock à une ligne existante ou créer une nouvelle ligne dans la liste
 	public void ajouterStock(StockEau nouveauStock) {
 		for(int i=0;i<stock.size();i++) {
 			if( stock.get(i).getEau().equals(nouveauStock.getEau()) && stock.get(i).getEntrepot().equals(nouveauStock.getEntrepot())) {
@@ -26,7 +26,7 @@ public class StockGlobal extends StockEau {
 		}
 		stock.add(nouveauStock);
 	}
-	
+	//retirer du stock dans la ligne existante
 	public void reduireQuantite(int indice,int quantite) {
 		if (indice >=0 && indice<stock.size()) {
 			StockEau s = stock.get(indice);
@@ -35,6 +35,7 @@ public class StockGlobal extends StockEau {
 		}
 		
 	}
+	//trier la liste par quantité
 	public void triParQuantite() {
 		for(int i=0; i<stock.size();i++) {
 			for(int j=i+1;j<stock.size();j++) {
@@ -46,7 +47,7 @@ public class StockGlobal extends StockEau {
 			}
 		}
 	}
-
+	//méthode toString
 	@Override
 	public String toString() {
 		return "StockGlobal [stock=" + stock + "]";
