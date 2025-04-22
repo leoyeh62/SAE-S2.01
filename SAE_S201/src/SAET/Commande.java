@@ -29,6 +29,17 @@ public class Commande implements RemisesPossibles {
 	public List<LigneDeCommande> getLignesDeCommande() {
 	    return lignesDeCommande;
 	}
+	public void setClient(Client client) {
+    	this.client = client;
+	}
+	
+	public void setDate(String date) {
+	    this.date = date;
+	}
+	
+	public void setLignesDeCommande(List<LigneDeCommande> lignesDeCommande) {
+	    this.lignesDeCommande = lignesDeCommande;
+	}
 	
 	public void ajouterLigneDeCommande(LigneDeCommande ligne) {
 		lignesDeCommande.add(ligne);
