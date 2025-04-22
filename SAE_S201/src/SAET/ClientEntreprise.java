@@ -9,7 +9,7 @@ public class ClientEntreprise extends Client {
         this.nom = nom;
         this.SIRET = SIRET;
     }
-    //méthode d'ajout de points de fidélités
+    //redéfinition de la méthode d'ajout de points de fidélités
     public void ajoutPointsFidelite(double achat) {
         double points = (achat / 1000) * 10;
         this.pointsFidelite += points;
