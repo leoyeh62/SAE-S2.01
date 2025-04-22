@@ -15,5 +15,8 @@ public class LigneDeCommande {
 	public int getQuantite() {
 		return quantite;
 	}
-
+	@Override
+public String toString() {
+    return "LigneDeCommande [eau=" + eau + ", quantite=" + quantite + "]";
+}
 }
