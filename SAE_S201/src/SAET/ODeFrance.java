@@ -36,5 +36,32 @@ public class ODeFrance {
         entreprise.ajoutPointsFidelite(5000);
         System.out.println("ClientEntreprise : " + entreprise.Getnom() + ", SIRET = " + entreprise.GetSIRET() + ", Points fidélité = " + entreprise.getPointsFidelite());
 
+        //test nouvelle ligne de commande
+        LigneDeCommande commande1 = new LigneDeCommande(eau1,15);
+        System.out.println(commande1);
+        LigneDeCommande commande2 = new LigneDeCommande(eau2,64);
+        System.out.println(commande2);
+        
+        //test creation nouvelle commande
+        Commande c1 = new Commande(entreprise,"22/04/2025");
+        System.out.println(c1);
+        
+        //test ligne commande
+        c1.ajouterLigneDeCommande(commande1);
+        System.out.println(c1);
+        
+        //calcul remise
+        double remise = c1.montantDeLaRemise();
+        System.out.println("remise de "+ remise*100+"%");
+        
+        //calcul bouteilles gratuites
+        int bouteilles=c1.nombreBouteillesGratuites();
+        System.out.println("nbr bouteilles gratuites " + bouteilles);
+        
+        //calcul montant total
+        double montantTotal=c1.montantTotal();
+        System.out.println("Montant total= "+ montantTotal);
+        System.out.println(c1.getLignesDeCommande());
+
     }
 }
