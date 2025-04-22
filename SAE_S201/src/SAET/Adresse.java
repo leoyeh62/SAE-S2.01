@@ -60,8 +60,5 @@ public class Adresse {
             return departement;
         }
     }
-
-    public static void main(String[] args) {
-    }
 }
 
