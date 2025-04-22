@@ -76,23 +76,24 @@ public void ajouterStock(Eau eau, entrepot entrepot, int quantite) {
     StockEau s = new StockEau(eau, entrepot, quantite);
     stockGlobal.ajouterStock(s);// on ajoute le stock ajouter dans stockglobal afin qu'il represente l'ensemble du stock de l'entreprise
 }
-
+//getteur pour le stock globlal
 public StockGlobal getStockGlobal() {
     return stockGlobal;
 }
 
 // Gestion des commandes
+    // on ajoute des commandes dans la liste commandes
 public void ajouterCommande(Commande commande) {
     commandes.add(commande);
 }
-
+// on retourne la liste commandes
 public List<Commande> getCommandes() {
     return commandes;
 }
 
 public Commande rechercherCommandeParId(int id) {
-    for (Commande c : commandes) {
-        if (c.getId() == id) {
+    for (Commande c : commandes) { //  boucle on parcourt chaque client dans la liste clients
+        if (c.getId() == id) { // si l'id de commande est égal a l'id en argument alors on retourne la commande
             return c;
         }
     }
