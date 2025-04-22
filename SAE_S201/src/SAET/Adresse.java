@@ -35,6 +35,10 @@ public class Adresse {
     public void setCommune(Commune commune) {
         this.commune = commune;
     }
+    @Override
+public String toString() {
+    return "Numéro :" + numero + " voie : " + voie + ", commune : " + commune;
+}
 
     public static class Commune {
         private String INSEE;
@@ -59,6 +63,10 @@ public class Adresse {
         public String getDepartement() {
             return departement;
         }
+        @Override
+public String toString() {
+    return "Commune :"+ Commune + " (" + departement + ", INSEE: " + INSEE + ")";
+}
     }
 }
 
