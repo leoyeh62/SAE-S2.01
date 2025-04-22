@@ -21,24 +21,28 @@ public class EntrepriseVenteEau {
         this.stockGlobal = new StockGlobal(null, null, 0); // À ajuster selon ta logique métier
     }
 // Gestion des clients
+    // On ajoute des clients grace a la classe clients
 public void ajouterClient(Client client) {
-    clients.add(client);
+    clients.add(client);  // Utilisation du add pour ajouter le client dans la liste clients
 }
 
+// Retourne la liste clients 
 public List<Client> getClients() {
     return clients;
 }
 
+    // renvoie uniquement les clients particuliers grace a instance of
 public List<ClientParticulier> getClientsParticuliers() {
-    List<ClientParticulier> particuliers = new ArrayList<>();
-    for (Client c : clients) {
-        if (c instanceof ClientParticulier) {
-            particuliers.add((ClientParticulier) c);
+    List<ClientParticulier> particuliers = new ArrayList<>(); // création d'une liste pour les clients particuliers
+    for (Client c : clients) { // boucle on parcourt chaque client dans la liste clients 
+        if (c instanceof ClientParticulier) { // Instance of test si c appartient a la sous-classe ClientParticulier
+            particuliers.add((ClientParticulier) c);// ajout du client dans la liste du ClientParticulier
         }
     }
-    return particuliers;
+    return particuliers;// on retourne la liste des Clients Particuliers 
 }
 
+    // renvoie uniquement les clients Entreprises grace a instance of (meme principe que pour les clients particuliers)
 public List<ClientEntreprise> getClientsEntreprises() {
     List<ClientEntreprise> entreprises = new ArrayList<>();
     for (Client c : clients) {
@@ -51,24 +55,26 @@ public List<ClientEntreprise> getClientsEntreprises() {
 
 
 public Client rechercherClientParCode(int code) {
-    for (Client c : clients) {
-        if (c.getCode() == code) {
+    for (Client c : clients) { //  boucle on parcourt chaque client dans la liste clients 
+        if (c.getCode() == code) { // si le code du client est egal au code en argument alors on le retourne
             return c;
         }
     }
-    return null;
+    return null; // sinon null
 }
 
 // Gestion des entrepôts
+    //on ajoute des entrepots grace a la classe entreprot
 public void ajouterEntrepot(entrepot e) {
     entrepots.add(e);
 }
 
 // Gestion des stocks
+    //méthode pour ajouter du stock qui prend en argument l'eau, l'entrepot et sa quantité
 public void ajouterStock(Eau eau, entrepot entrepot, int quantite) {
     // Ajouter un stock spécifique dans un entrepôt
     StockEau s = new StockEau(eau, entrepot, quantite);
-    stockGlobal.ajouterStock(s);
+    stockGlobal.ajouterStock(s);// on ajoute le stock ajouter dans stockglobal afin qu'il represente l'ensemble du stock de l'entreprise
 }
 
 public StockGlobal getStockGlobal() {
