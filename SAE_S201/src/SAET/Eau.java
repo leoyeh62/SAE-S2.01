@@ -6,6 +6,7 @@ public class Eau extends ODeFrance{
 	private double prix;
     public enum Type {Plate,Gazeuse}
     private Type catégorie;
+	//Constructeur
 	public Eau(int id,String marque,double prix,Type type) {
 		super();
 		this.id=id;
@@ -13,16 +14,17 @@ public class Eau extends ODeFrance{
 		this.prix=prix;
 		this.catégorie=type;
 	}
-	public int Getid() {
+	//getter
+	public int getId() {
 		return id;
 	}
-	public String marque() {
+	public String getMarque() {
 		return marque;
 	}
-	public double prix() {
+	public double getPrix() {
 		return prix;
 	}
-	
+	//setters
 	public void setPrix(int prix) {
 		this.prix=prix;
 	}
@@ -35,7 +37,7 @@ public class Eau extends ODeFrance{
 		this.marque=marque;
 	}
 	
-
+        //méthode toString
 	@Override
 	public String toString() {
 		return "Eau [id=" + id + ", marque=" + marque + ", prix=" + prix + ", catégorie=" + catégorie + "]";
