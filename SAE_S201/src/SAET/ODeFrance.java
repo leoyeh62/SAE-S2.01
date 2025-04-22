@@ -35,7 +35,7 @@ public class ODeFrance {
         ClientEntreprise entreprise = new ClientEntreprise(2001, 20230101, adresseEntreprise, "01567451522", "contact@entreprise.fr", 120, "NettSpend", 123456789);
         entreprise.ajoutPointsFidelite(5000);
         System.out.println("ClientEntreprise : " + entreprise.Getnom() + ", SIRET = " + entreprise.GetSIRET() + ", Points fidélité = " + entreprise.getPointsFidelite());
-
+        
         //test nouvelle ligne de commande
         LigneDeCommande commande1 = new LigneDeCommande(eau1,15);
         System.out.println(commande1);
@@ -62,6 +62,16 @@ public class ODeFrance {
         double montantTotal=c1.montantTotal();
         System.out.println("Montant total= "+ montantTotal);
         System.out.println(c1.getLignesDeCommande());
-
+        
+        //calcul du paiement
+        MethodePaiement carte = new CarteBancaire();
+        System.out.println(carte);
+        Paiement paiement = new Paiement(montantTotal,carte);
+        System.out.println(paiement);
+        
+        //traitement du paiement
+        PaiementSimple paiementS= new PaiementSimple();
+        System.out.println(paiementS);
+        paiementS.executePaiement(paiement);
     }
 }
