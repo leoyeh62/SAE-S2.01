@@ -56,32 +56,32 @@ public class TestEntrepriseVenteEau {
         System.out.println("Commande trouvée : " + commandeTrouvee);
         
         // Test de paiement
-System.out.println("\n    Test de paiement    ");
+        System.out.println("\n    Test de paiement    ");
 
-// Création d'une carte bancaire (classe concrète qui implémente MethodePaiement)
-MethodePaiement carteBancaire = new CarteBancaire();
-System.out.println(carteBancaire);
+        // Création d'une carte bancaire (classe concrète qui implémente MethodePaiement)
+        MethodePaiement carteBancaire = new CarteBancaire();
+        System.out.println(carteBancaire);
 
-// Création d’un paiement avec la méthode de paiement choisie
-Paiement paiement = new Paiement(8.0, carteBancaire); // Paiement de 8€
-System.out.println(paiement);
+        // Création d’un paiement avec la méthode de paiement choisie
+        Paiement paiement = new Paiement(8.0, carteBancaire); // Paiement de 8€
+        System.out.println(paiement);
 
-// Création de la stratégie de traitement
-TraitementPaiement paiementSimple = new PaiementSimple();
-System.out.println(paiementSimple);
+        // Création de la stratégie de traitement
+        TraitementPaiement paiementSimple = new PaiementSimple();
+        System.out.println(paiementSimple);
 
-// Traitement du paiement via l'entreprise
-entreprise.traiterPaiement(paiement, paiementSimple);
+        // Traitement du paiement via l'entreprise
+        entreprise.traiterPaiement(paiement, paiementSimple);
 
-// Afficher les paiements enregistrés
-System.out.println("Paiements: " + entreprise.getPaiements());
+        // Afficher les paiements enregistrés
+        System.out.println("Paiements: " + entreprise.getPaiements());
 
-// Test du remboursement
-System.out.println("\n    Test de remboursement    ");
-entreprise.rembourserPaiement(paiement, paiementSimple);
+        // Test du remboursement
+        System.out.println("\n    Test de remboursement    ");
+        entreprise.rembourserPaiement(paiement, paiementSimple);
 
-// Afficher à nouveau la liste des paiements (inchangée, mais peut loguer le remboursement)
-System.out.println("Paiements: " + entreprise.getPaiements());
+        // Afficher à nouveau la liste des paiements (inchangée, mais peut loguer le remboursement)
+       System.out.println("Paiements: " + entreprise.getPaiements());
 
     }
 }
