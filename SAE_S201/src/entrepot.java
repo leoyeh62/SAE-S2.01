@@ -10,5 +10,23 @@ public class entrepot extends O_de_france {
 		this.nom = nom;
 		this.code = code;
 	}
+	public setAdresse(String addresse){
+		this.addresse=addresse;
+	}
+	public setNom(String nom){
+		this.nom=nom;
+	}
+	public setCode(int code){
+		this.code=code;
+	}
+	public getCode(){
+		return code;
+	}
+	public getAdresse(){
+		return adresse;
+	}
+	public getNom(){
+		return nom;
+	}
 
 }
