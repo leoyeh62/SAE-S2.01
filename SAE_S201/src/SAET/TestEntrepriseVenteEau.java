@@ -54,31 +54,34 @@ public class TestEntrepriseVenteEau {
         System.out.println("\n    Test de recherche par ID de commande    ");
         Commande commandeTrouvee = entreprise.rechercherCommandeParId(1);
         System.out.println("Commande trouvée : " + commandeTrouvee);
-
+        
         // Test de paiement
-        System.out.println("\n    Test de paiement    ");
-        MethodePaiement carteBancaire = new MethodePaiement() {
-            public void payer(double montant) {
-                System.out.println("Paiement de " + montant + "€ par carte bancaire");
-            }
+System.out.println("\n    Test de paiement    ");
 
-            public void rembourser(double montant) {
-                System.out.println("Remboursement de " + montant + "€ sur la carte bancaire");
-            }
-        };
+// Création d'une carte bancaire (classe concrète qui implémente MethodePaiement)
+MethodePaiement carteBancaire = new CarteBancaire();
+System.out.println(carteBancaire);
 
-        Paiement paiement = new Paiement(8.0, carteBancaire); // Paiement de 8€
-        TraitementPaiement paiementSimple = new PaiementSimple();
-        entreprise.traiterPaiement(paiement, paiementSimple);
+// Création d’un paiement avec la méthode de paiement choisie
+Paiement paiement = new Paiement(8.0, carteBancaire); // Paiement de 8€
+System.out.println(paiement);
 
-        // Afficher les paiements
-        System.out.println("Paiements: " + entreprise.getPaiements());
-        
-        // Test du remboursement
-        System.out.println("\n    Test de remboursement    ");
-        entreprise.rembourserPaiement(paiement, paiementSimple);
-        
-        // Afficher les paiements
-        System.out.println("Paiements: " + entreprise.getPaiements());
+// Création de la stratégie de traitement
+TraitementPaiement paiementSimple = new PaiementSimple();
+System.out.println(paiementSimple);
+
+// Traitement du paiement via l'entreprise
+entreprise.traiterPaiement(paiement, paiementSimple);
+
+// Afficher les paiements enregistrés
+System.out.println("Paiements: " + entreprise.getPaiements());
+
+// Test du remboursement
+System.out.println("\n    Test de remboursement    ");
+entreprise.rembourserPaiement(paiement, paiementSimple);
+
+// Afficher à nouveau la liste des paiements (inchangée, mais peut loguer le remboursement)
+System.out.println("Paiements: " + entreprise.getPaiements());
+
     }
 }
