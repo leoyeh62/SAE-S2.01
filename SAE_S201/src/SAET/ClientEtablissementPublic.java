@@ -4,7 +4,7 @@ public class ClientEtablissementPublic extends Client{
 	private String nom;
 	private enum Type {EPIC,EPA,EPSCT}
 	private Type type;
-	
+	//constructeur
 	public ClientEtablissementPublic(int code, int dateInscription, Adresse adresse,String telephone, String mail, int pointsFidelite,String nom,Type type) {
         super(code, dateInscription, adresse, telephone, mail, pointsFidelite);
         this.nom = nom;
