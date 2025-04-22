@@ -17,6 +17,9 @@ public class StockGlobal extends StockEau {
     }
 	//ajouter du stock à une ligne existante ou créer une nouvelle ligne dans la liste
 	public void ajouterStock(StockEau nouveauStock) {
+		if (nouveauStock == null) {
+    			throw new IllegalArgumentException("Le stock à ajouter ne peut pas être null");
+		}
 		for(int i=0;i<stock.size();i++) {
 			if( stock.get(i).getEau().equals(nouveauStock.getEau()) && stock.get(i).getEntrepot().equals(nouveauStock.getEntrepot())) {
 				int nouvelleQuantite = stock.get(i).getQuantite()+nouveauStock.getQuantite();
@@ -30,6 +33,9 @@ public class StockGlobal extends StockEau {
 	public void reduireQuantite(int indice,int quantite) {
 		if (indice >=0 && indice<stock.size()) {
 			StockEau s = stock.get(indice);
+			if (quantite > s.getQuantite()) {
+       				 throw new IllegalArgumentException("Quantité à retirer supérieure au stock disponible");
+   			}
 			int nouvelleQuantite =s.getQuantite()-quantite;
 			s.setQuantite(nouvelleQuantite);
 		}
