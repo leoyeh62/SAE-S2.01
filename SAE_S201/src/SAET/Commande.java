@@ -50,7 +50,7 @@ public class Commande implements RemisesPossibles {
 	//ajout nouvelle ligne de commande
 	public void ajouterLigneDeCommande(LigneDeCommande ligne) {
 		if (ligne == null) {
-   			 throw new IllegalArgumentException("La ligne de commande ne peut pas être null.");
+   			 throw new IllegalArgumentException("la ligne de commande ne peut pas être nulle");
 		}
 		lignesDeCommande.add(ligne);
 	}
