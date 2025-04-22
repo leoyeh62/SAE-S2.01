@@ -10,32 +10,31 @@ public class ClientEtablissementPublic extends Client{
         this.nom = nom;
         this.type = type;
     }
-	
+	//redéfinition de la méthode d'ajout de points de fidélités
 	public void ajoutPointsFidelite(double achat) {
         double points = (achat / 500) * 10;
         this.pointsFidelite += points;
     }
-
+    //getters
     public String getTypeClient() {
         return "EtablissementPublic";
+    }
+	public Type getType() {
+        return type;
     }
 
     public String getNom() {
         return nom;
     }
-
+    //setters
     public void setNom(String nom) {
         this.nom = nom;
-    }
-
-    public Type getType() {
-        return type;
     }
 
     public void setType(Type type) {
         this.type = type;
     }
-
+        //méthode toString
 	@Override
 	public String toString() {
 		return "ClientEtablissementPublic [nom=" + nom + ", type=" + type + ", getCode()=" + getCode()
