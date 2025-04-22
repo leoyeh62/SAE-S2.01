@@ -40,10 +40,6 @@ public class Eau extends ODeFrance{
 	public String toString() {
 		return "Eau [id=" + id + ", marque=" + marque + ", prix=" + prix + ", catégorie=" + catégorie + "]";
 	}
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-	}
 	
 
 }
