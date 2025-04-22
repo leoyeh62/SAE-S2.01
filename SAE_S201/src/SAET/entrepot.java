@@ -1,4 +1,4 @@
-package Entrepot;
+package SAET;
 
 public class entrepot extends O_de_france {
 	private String nom;
