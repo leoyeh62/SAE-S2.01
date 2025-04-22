@@ -7,7 +7,8 @@ public abstract class Client {
     private String telephone;
     private String mail;
     protected int pointsFidelite;
-
+	
+    //Constructeur
     public Client(int code, int dateInscription, Adresse adresse, String telephone, String mail, int pointsFidelite) {
         this.code = code;
         this.dateInscription = dateInscription;
@@ -16,11 +17,11 @@ public abstract class Client {
         this.mail = mail;
         this.pointsFidelite = pointsFidelite;
     }
-
+    //méthodes abstraites	
     public abstract void ajoutPointsFidelite(double achat);
     public abstract String getTypeClient();
 
-
+    //getters 
     public int getCode() {
         return code;
     }
@@ -44,7 +45,7 @@ public abstract class Client {
     public int getPointsFidelite() {
         return pointsFidelite;
     }
-
+    //setters
     public void setAdresse(Adresse adresse) {
         this.adresse = adresse;
     }
@@ -60,7 +61,7 @@ public abstract class Client {
     public void setPointsFidelite(int pointsFidelite) {
         this.pointsFidelite = pointsFidelite;
     }
-    
+    //méthode toString
     @Override
   	public String toString() {
   		return "Client [code=" + code + ", dateInscription=" + dateInscription + ", adresse=" + adresse + ", telephone="
