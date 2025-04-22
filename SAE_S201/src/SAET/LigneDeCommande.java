@@ -1,7 +1,6 @@
 package SAET;
 
 public class LigneDeCommande {
-	//attributs
 	private final Eau eau;
 	private final int quantite;
 	
