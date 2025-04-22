@@ -18,7 +18,7 @@ public class EntrepriseVenteEau {
         this.commandes = new ArrayList<>();
         this.paiements = new ArrayList<>();	
         this.entrepots = new ArrayList<>();
-        this.stockGlobal = new StockGlobal(null, null, 0); // À ajuster selon ta logique métier
+        this.stockGlobal = new StockGlobal(null, null, 0); 
     }
 // Gestion des clients
     // On ajoute des clients grace a la classe clients
@@ -101,18 +101,25 @@ public Commande rechercherCommandeParId(int id) {
 }
 
 // Gestion des paiements
-public void traiterPaiement(Paiement paiement, TraitementPaiement stratégie) { // Methode qui permet de traiter le paiement avec comme argument "Paiement paiement" qui contient le montant a payer et la methode de paiement
+public void traiterPaiement(Paiement paiement, TraitementPaiement stratégie) {
+    // On utilise la stratégie de paiement pour exécuter le paiement.
+        // Cela permet de déléguer la logique à la classe responsable qui est stratégie ici
     stratégie.executePaiement(paiement);
+
+    // On enregistre le paiement dans la liste des paiements
     paiements.add(paiement);
 }
 
 public void rembourserPaiement(Paiement paiement, TraitementPaiement stratégie) {
+    // On utilise la stratégie de paiement pour effectuer le remboursement du paiement.
     stratégie.remboursement(paiement);
 }
 
 public List<Paiement> getPaiements() {
+    // Cette méthode retourne la liste complète de tous les paiements enregistrés.
     return paiements;
 }
+
 
 // Affichage global de l'entreprise
 @Override
