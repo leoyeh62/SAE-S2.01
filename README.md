@@ -43,6 +43,7 @@ SAE-S2.01/
 │       ├── StockGlobal.java
 │       └── TraitementPaiement.java
 └── README.md
+```
 
 ## 🚀 Lancer le projet
 
