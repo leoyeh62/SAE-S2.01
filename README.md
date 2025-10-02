@@ -29,17 +29,19 @@ Le cœur du projet repose sur la classe `EntrepriseVenteEau`, qui centralise la 
 
 ## 📁 Structure du dépôt
 
-├── src/ 
-│   └── SAET/ 
-│     ├── EntrepriseVenteEau.java 
-│     ├── Client.java 
-│     ├── Commande.java 
-│     ├── Paiement.java 
-│     ├── Entrepot.java 
-│     ├── Eau.java 
-│     ├── StockEau.java 
-│     ├── StockGlobal.java 
-│     └── TraitementPaiement.java 
+```text
+SAE-S2.01/
+├── src/
+│   └── SAET/
+│       ├── EntrepriseVenteEau.java
+│       ├── Client.java
+│       ├── Commande.java
+│       ├── Paiement.java
+│       ├── Entrepot.java
+│       ├── Eau.java
+│       ├── StockEau.java
+│       ├── StockGlobal.java
+│       └── TraitementPaiement.java
 └── README.md
 
 ## 🚀 Lancer le projet
